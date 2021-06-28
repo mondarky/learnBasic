@@ -1,37 +1,37 @@
 <%= form_with(model: tutorial) do |form| %>
-  <% if tutorial.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(tutorial.errors.count, "error") %> prohibited this tutorial from being saved:</h2>
+<% if tutorial.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(tutorial.errors.count, "error") %> prohibited this tutorial from being saved:</h2>
 
-      <ul>
-        <% tutorial.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <ul>
+    <% tutorial.errors.each do |error| %>
+    <li><%= error.full_message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
 
-  <div class="field">
-    <%= form.label :first_name %>
-    <%= form.text_field :first_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :last_name %>
-    <%= form.text_field :last_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-  </div>
-
-  <div class="field">
-    <%= form.label :phone %>
-    <%= form.text_field :phone %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+<div class="field form-group">
+  <% form.label :first_name %>
+  <%= form.text_field :first_name, class:"form-control", placeholder:"first name" %>
+</div>
+<br />
+<div class="field form-group">
+  <% form.label :last_name %>
+  <%= form.text_field :last_name, class:"form-control", placeholder: "last name" %>
+</div>
+<br />
+<div class="field form-group">
+  <% form.label :email %>
+  <%= form.text_field :email, class:"form-control", placeholder:"email" %>
+</div>
+<br />
+<div class="field form-group">
+  <% form.label :phone %>
+  <%= form.text_field :phone, class:"form-control", placeholder:"phone number" %>
+</div>
+<br />
+<div class="actions">
+  <%= form.submit class:"btn btn-secondary"%>
+</div>
 <% end %>

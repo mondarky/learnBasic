@@ -1,6 +1,6 @@
 class TutorialsController < ApplicationController
   before_action :set_tutorial, only: %i[ show edit update destroy ]
-
+  before_action :authenticate_user!, except:%i[index show]
   # GET /tutorials or /tutorials.json
   def index
     @tutorials = Tutorial.all
